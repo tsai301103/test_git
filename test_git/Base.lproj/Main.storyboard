@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--first view-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="test_git" customModuleProvider="target" sceneMemberID="viewController">
@@ -55,7 +55,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Cto-J4-Jch"/>
+                    <navigationItem key="navigationItem" title="first view" id="OdZ-ky-f3a">
+                        <barButtonItem key="backBarButtonItem" title="return" id="K6r-Sh-4dF"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="aguilife" destination="JtA-Jx-kfB" id="VeP-4A-YMY"/>
                         <outlet property="aguilife_num" destination="HK2-LV-ZAf" id="L5n-ij-Qhz"/>
@@ -66,7 +68,7 @@
             </objects>
             <point key="canvasLocation" x="534.78260869565224" y="10.714285714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--second view-->
         <scene sceneID="Ig0-gi-MIH">
             <objects>
                 <viewController id="yf9-Y1-y1d" customClass="ViewController" customModule="test_git" customModuleProvider="target" sceneMemberID="viewController">
@@ -82,7 +84,7 @@
                         <viewLayoutGuide key="safeArea" id="e1N-f0-VOw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="eFC-mt-zkr"/>
+                    <navigationItem key="navigationItem" title="second view" id="NYx-mO-mhi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJX-0u-gCz" sceneMemberID="firstResponder"/>
             </objects>
