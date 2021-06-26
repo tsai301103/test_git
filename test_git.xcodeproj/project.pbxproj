@@ -15,6 +15,7 @@
 		DBFD92EC26832ABA008AB536 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBFD92EA26832ABA008AB536 /* LaunchScreen.storyboard */; };
 		DBFD92F726832ABB008AB536 /* test_gitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFD92F626832ABB008AB536 /* test_gitTests.swift */; };
 		DBFD930226832ABB008AB536 /* test_gitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFD930126832ABB008AB536 /* test_gitUITests.swift */; };
+		DBFD931F26877546008AB536 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFD931E26877546008AB536 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		DBFD92FD26832ABB008AB536 /* test_gitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = test_gitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBFD930126832ABB008AB536 /* test_gitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test_gitUITests.swift; sourceTree = "<group>"; };
 		DBFD930326832ABB008AB536 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBFD931E26877546008AB536 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +103,7 @@
 			children = (
 				DBFD92DF26832AB9008AB536 /* AppDelegate.swift */,
 				DBFD92E126832AB9008AB536 /* SceneDelegate.swift */,
-				DBFD92E326832AB9008AB536 /* ViewController.swift */,
+				DBFD931726875BEF008AB536 /* Control */,
 				DBFD92E526832AB9008AB536 /* Main.storyboard */,
 				DBFD92E826832ABA008AB536 /* Assets.xcassets */,
 				DBFD92EA26832ABA008AB536 /* LaunchScreen.storyboard */,
@@ -126,6 +128,15 @@
 				DBFD930326832ABB008AB536 /* Info.plist */,
 			);
 			path = test_gitUITests;
+			sourceTree = "<group>";
+		};
+		DBFD931726875BEF008AB536 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				DBFD92E326832AB9008AB536 /* ViewController.swift */,
+				DBFD931E26877546008AB536 /* SecondViewController.swift */,
+			);
+			path = Control;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBFD931F26877546008AB536 /* SecondViewController.swift in Sources */,
 				DBFD92E426832AB9008AB536 /* ViewController.swift in Sources */,
 				DBFD92E026832AB9008AB536 /* AppDelegate.swift in Sources */,
 				DBFD92E226832AB9008AB536 /* SceneDelegate.swift in Sources */,
