@@ -76,6 +76,7 @@
                         <outlet property="aguilife_num" destination="HK2-LV-ZAf" id="L5n-ij-Qhz"/>
                         <outlet property="left_num" destination="6Zt-fc-Cgz" id="TKR-U7-k6w"/>
                         <outlet property="right_num" destination="5u9-7b-sVL" id="fCc-nm-pdn"/>
+                        <segue destination="yf9-Y1-y1d" kind="show" identifier="goSecondView" id="iZQ-ps-W17"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -108,8 +109,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="second view" id="NYx-mO-mhi"/>
                     <connections>
-                        <outlet property="GodSign" destination="TV8-t4-w6M" id="Yuw-LZ-kdq"/>
-                        <outlet property="godSignal" destination="TV8-t4-w6M" id="vLN-ap-bkp"/>
+                        <outlet property="godShow" destination="TV8-t4-w6M" id="tui-uC-buL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJX-0u-gCz" sceneMemberID="firstResponder"/>

@@ -39,9 +39,12 @@ class ViewController: UIViewController {
             print("無標")
         }
         
-        let SecondVC = SecondViewController()
-        self.present(SecondVC, animated: true, completion: nil)
+        self.performSegue(withIdentifier: "goSecondView", sender: self)
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let secondVC = segue.destination as! SecondViewController
+        print(secondVC)
     }
     
 
