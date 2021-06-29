@@ -8,12 +8,22 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-
+    
+    var godSign = ""
+    var leftSign = ""
+    var rightSign = ""
+    
+    @IBOutlet weak var leftNum: UILabel!
+    @IBOutlet weak var rightNum: UILabel!
+    
     @IBOutlet weak var godShow: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        godShow.text = godSign
+        leftNum.text = leftSign
+        rightNum.text = rightSign
         // Do any additional setup after loading the view.
     }
     

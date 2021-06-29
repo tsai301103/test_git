@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var left_num: UILabel!
     @IBOutlet weak var right_num: UILabel!
     @IBOutlet weak var aguilife_num: UILabel!
+    var godSignVC = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,15 +29,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func rollPress(_ sender: UIButton) {
-        let leftRandom = Int.random(in: 0 ... 9)
-        let rightRandom = Int.random(in: 0 ... 9)
+        let leftRandom = Int.random(in: 0 ... 1)
+        let rightRandom = Int.random(in: 0 ... 1)
         left_num.text = String(leftRandom)
         right_num.text = String(rightRandom)
         
-        if leftRandom == rightRandom {
-            print("有鏢")
+        if leftRandom == 1 && rightRandom == 1 {
+            godSignVC = "有筊"
+        } else if leftRandom == 0 && rightRandom == 0{
+            godSignVC = "笑筊"
         } else {
-            print("無標")
+            godSignVC = "無筊"
         }
         
         self.performSegue(withIdentifier: "goSecondView", sender: self)
@@ -45,6 +48,9 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let secondVC = segue.destination as! SecondViewController
         print(secondVC)
+        secondVC.godSign = godSignVC
+        secondVC.leftSign = left_num.text!
+        secondVC.rightSign = right_num.text!
     }
     
 
