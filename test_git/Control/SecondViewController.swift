@@ -12,7 +12,9 @@ class SecondViewController: UIViewController {
     var godSign = ""
     var leftSign = ""
     var rightSign = ""
+    var godImageSelect = "paul"
     
+    @IBOutlet weak var godImage: UIImageView!
     @IBOutlet weak var leftNum: UILabel!
     @IBOutlet weak var rightNum: UILabel!
     
@@ -25,6 +27,7 @@ class SecondViewController: UIViewController {
         leftNum.text = leftSign
         rightNum.text = rightSign
         // Do any additional setup after loading the view.
+        godImage.image = UIImage(named: godImageSelect)
     }
     
 

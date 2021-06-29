@@ -13,7 +13,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var left_num: UILabel!
     @IBOutlet weak var right_num: UILabel!
     @IBOutlet weak var aguilife_num: UILabel!
+    @IBOutlet weak var GodImage: UIImageView!
+    
     var godSignVC = ""
+    var godName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +28,21 @@ class ViewController: UIViewController {
     }
 
     @IBAction func sliding(_ sender: UISlider) {
-        aguilife_num.text=String(sender.value.rounded())
+        let imageNumber = sender.value.rounded()
+        aguilife_num.text=String(imageNumber)
+        
+        switch imageNumber {
+        case 1:
+            GodImage.image = UIImage(named: "jesus")
+            godName = "jesus"
+        case 2:
+            GodImage.image = UIImage(named: "paul")
+            godName = "paul"
+        default:
+            GodImage.image = UIImage(named: "peter")
+            godName = "peter"
+        }
+
     }
     
     @IBAction func rollPress(_ sender: UIButton) {
@@ -41,6 +58,7 @@ class ViewController: UIViewController {
         } else {
             godSignVC = "無筊"
         }
+     
         
         self.performSegue(withIdentifier: "goSecondView", sender: self)
     }
@@ -51,6 +69,7 @@ class ViewController: UIViewController {
         secondVC.godSign = godSignVC
         secondVC.leftSign = left_num.text!
         secondVC.rightSign = right_num.text!
+        secondVC.godImageSelect = godName
     }
     
 

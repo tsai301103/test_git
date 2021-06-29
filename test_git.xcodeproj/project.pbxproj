@@ -78,6 +78,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB35C6CC268B442E00DEBB6F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DBFD92E526832AB9008AB536 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DB35C6CD268B444600DEBB6F /* Module */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
 		DBFD92D326832AB9008AB536 = {
 			isa = PBXGroup;
 			children = (
@@ -101,10 +116,11 @@
 		DBFD92DE26832AB9008AB536 /* test_git */ = {
 			isa = PBXGroup;
 			children = (
+				DB35C6CD268B444600DEBB6F /* Module */,
 				DBFD92DF26832AB9008AB536 /* AppDelegate.swift */,
 				DBFD92E126832AB9008AB536 /* SceneDelegate.swift */,
 				DBFD931726875BEF008AB536 /* Control */,
-				DBFD92E526832AB9008AB536 /* Main.storyboard */,
+				DB35C6CC268B442E00DEBB6F /* View */,
 				DBFD92E826832ABA008AB536 /* Assets.xcassets */,
 				DBFD92EA26832ABA008AB536 /* LaunchScreen.storyboard */,
 				DBFD92ED26832ABA008AB536 /* Info.plist */,
