@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var GodImage: UIImageView!
     
     var godSignVC = ""
-    var godName = ""
+    var godName = "jesus"
     
     override func viewDidLoad() {
         super.viewDidLoad()
