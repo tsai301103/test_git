@@ -43,9 +43,7 @@ class ViewController: UIViewController {
             GodImage.image = UIImage(named: "peter")
             godName = "peter"
         }
-
     }
-    
     @IBAction func rollPress(_ sender: UIButton) {
         let leftRandom = Int.random(in: 0 ... 1)
         let rightRandom = Int.random(in: 0 ... 1)
@@ -70,12 +68,16 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let secondVC = segue.destination as! SecondViewController
-        print(secondVC)
-        secondVC.godSign = godSignVC
-        secondVC.leftSign = left_num.text!
-        secondVC.rightSign = right_num.text!
-        secondVC.godImageSelect = godName
+        if segue.identifier == "goSecondView" {
+            let secondVC = segue.destination as! SecondViewController
+            secondVC.godSign = godSignVC
+            secondVC.leftSign = left_num.text!
+            secondVC.rightSign = right_num.text!
+            secondVC.godImageSelect = godName
+        } else if segue.identifier == "goThirdView" {
+            let thirdVC = segue.destination as! WeatherViewController
+            print(thirdVC)
+        }
     }
     
     @IBAction func weatherRequest(_ sender: UIButton) {
@@ -100,25 +102,8 @@ class ViewController: UIViewController {
                         print("error")
                     }
                 }.resume()
-            
-//       print(String(data: data, encoding: .utf8)!)
-           
-//        do{
-//            let jsonData = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
-//            print(jsonData!["main"])
-////            main.temp
-//            }catch{ print("erroMsg") }
-
-            
+        // 這個啟動 "goThirdView" segue
+        //self.performSegue(withIdentifier: "goThirdView", sender: self)
         }
-    
-
-//        task.resume()
-        
-    
-    
-    
-    
-
 }
 
