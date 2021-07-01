@@ -78,6 +78,31 @@ class ViewController: UIViewController {
         secondVC.godImageSelect = godName
     }
     
+    @IBAction func weatherRequest(_ sender: UIButton) {
+        let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=London&appid=73ec0f689377a5484daa315c8988db03")!
+
+        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
+            guard let data = data else { return }
+            
+            
+       print(String(data: data, encoding: .utf8)!)
+           
+//        do{
+//            let jsonData = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
+//            print(jsonData!["main"])
+////            main.temp
+//            }catch{ print("erroMsg") }
+
+            
+        }
+    
+
+        task.resume()
+        
+    }
+    
+    
+    
 
 }
 
