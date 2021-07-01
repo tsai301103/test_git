@@ -68,7 +68,6 @@
                                 </state>
                                 <connections>
                                     <action selector="weatherRequest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="au8-3y-M9O"/>
-                                    <segue destination="bcY-2t-8jt" kind="show" identifier="goThirdView" id="BRc-2y-gCX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -85,6 +84,7 @@
                         <outlet property="left_num" destination="6Zt-fc-Cgz" id="TKR-U7-k6w"/>
                         <outlet property="right_num" destination="5u9-7b-sVL" id="fCc-nm-pdn"/>
                         <segue destination="yf9-Y1-y1d" kind="show" identifier="goSecondView" id="iZQ-ps-W17"/>
+                        <segue destination="bcY-2t-8jt" kind="show" identifier="goThirdView" id="u29-aU-Pej"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

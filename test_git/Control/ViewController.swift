@@ -67,18 +67,7 @@ class ViewController: UIViewController {
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goSecondView" {
-            let secondVC = segue.destination as! SecondViewController
-            secondVC.godSign = godSignVC
-            secondVC.leftSign = left_num.text!
-            secondVC.rightSign = right_num.text!
-            secondVC.godImageSelect = godName
-        } else if segue.identifier == "goThirdView" {
-            let thirdVC = segue.destination as! WeatherViewController
-            print(thirdVC)
-        }
-    }
+   
     
     @IBAction func weatherRequest(_ sender: UIButton) {
         let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=73ec0f689377a5484daa315c8988db03")!
@@ -103,7 +92,23 @@ class ViewController: UIViewController {
                     }
                 }.resume()
         // 這個啟動 "goThirdView" segue
-        //self.performSegue(withIdentifier: "goThirdView", sender: self)
+        self.performSegue(withIdentifier: "goThirdView", sender: self)
         }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goSecondView" {
+            let secondVC = segue.destination as! SecondViewController
+            secondVC.godSign = godSignVC
+            secondVC.leftSign = left_num.text!
+            secondVC.rightSign = right_num.text!
+            secondVC.godImageSelect = godName
+        } else if segue.identifier == "goThirdView" {
+            let thirdVC = segue.destination as! WeatherViewController
+            print(thirdVC)
+        }
+    }
+    
+    
+    
 }
 
