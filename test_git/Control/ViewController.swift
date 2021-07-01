@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     
     var godSignVC = ""
     var godName = "jesus"
+    var times = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,9 +59,14 @@ class ViewController: UIViewController {
         } else {
             godSignVC = "無筊"
         }
-     
+        times += 1
+        //擲三次 才會跳到下個頁面
+        while times>2 {
+            times = 0
+            self.performSegue(withIdentifier: "goSecondView", sender: self)
+            
+        }
         
-        self.performSegue(withIdentifier: "goSecondView", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
