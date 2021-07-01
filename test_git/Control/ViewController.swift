@@ -79,13 +79,29 @@ class ViewController: UIViewController {
     }
     
     @IBAction func weatherRequest(_ sender: UIButton) {
-        let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=London&appid=73ec0f689377a5484daa315c8988db03")!
+        let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=73ec0f689377a5484daa315c8988db03")!
 
-        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-            guard let data = data else { return }
+        let task = URLSession.shared.dataTask(with: url) {(data_here, response, error) in
+//            guard let data = data else { return }
+                    //先建立解碼器
+                    let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .iso8601
+                    //
+                    if let safeData = data_here {
+                        do {
+                            let decodedData = try decoder.decode(WeatherDecoded.self, from: safeData)
+                            print(decodedData.main.humidity)
+                            print(decodedData.main.temp)
+                            print(decodedData.name)
+                        } catch {
+                            print(error)
+                        }
+                    } else {
+                        print("error")
+                    }
+                }.resume()
             
-            
-       print(String(data: data, encoding: .utf8)!)
+//       print(String(data: data, encoding: .utf8)!)
            
 //        do{
 //            let jsonData = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
@@ -97,9 +113,9 @@ class ViewController: UIViewController {
         }
     
 
-        task.resume()
+//        task.resume()
         
-    }
+    
     
     
     

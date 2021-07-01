@@ -9,5 +9,13 @@ import Foundation
 
 
 struct WeatherDecoded:Codable{
+    let main:StoreItem
     let name:String
 }
+
+struct StoreItem:Codable{
+    let temp:Double
+    let humidity:Double
+}
+
+//main.temp
