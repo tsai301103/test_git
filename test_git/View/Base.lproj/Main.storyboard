@@ -192,6 +192,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="83Q-ax-zjX"/>
+                    <connections>
+                        <outlet property="humidOutlet" destination="FxZ-gg-NDH" id="dsY-aR-LkO"/>
+                        <outlet property="placeOutlet" destination="i0R-XQ-6Qx" id="hxo-bc-T87"/>
+                        <outlet property="tempOutlet" destination="RuN-va-EPK" id="vv4-Vp-beK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8D-D3-eBS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

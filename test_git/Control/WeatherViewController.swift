@@ -8,22 +8,24 @@
 import UIKit
 
 class WeatherViewController: UIViewController {
-
+    
+    var temp = ""
+    var place = ""
+    var humidity = ""
+    
+    @IBOutlet weak var placeOutlet: UILabel!
+    @IBOutlet weak var humidOutlet: UILabel!
+    @IBOutlet weak var tempOutlet: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        placeOutlet.text = place
+        humidOutlet.text = humidity
+        tempOutlet.text = temp
+        
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
