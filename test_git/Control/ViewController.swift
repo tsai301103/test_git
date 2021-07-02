@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var right_num: UILabel!
     @IBOutlet weak var aguilife_num: UILabel!
     @IBOutlet weak var GodImage: UIImageView!
-    
+
     
     var godSignVC = ""
     var godName = "jesus"
@@ -23,6 +23,8 @@ class ViewController: UIViewController {
     var place = ""
     var humidity = 0.0
     var temp = 0.0
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,9 +88,14 @@ class ViewController: UIViewController {
                     if let safeData = data_here {
                         do {
                             let decodedData = try decoder.decode(WeatherDecoded.self, from: safeData)
-                            self.humidity = decodedData.main.humidity
-                            self.temp = decodedData.main.temp
-                            self.place = decodedData.name
+//                            GlobalVar.humidity = String(decodedData.main.humidity)
+                            
+//                            GlobalVar.humidity = decodedData.main.humidity
+                            GlobalVar.humidity = 13
+                            print(GlobalVar.humidity)
+//                            self.temp = decodedData.main.temp
+//                            self.place = decodedData.name
+                            
                         } catch {
                             print(error)
                         }
@@ -109,12 +116,14 @@ class ViewController: UIViewController {
             secondVC.godImageSelect = godName
         } else if segue.identifier == "goThirdView" {
             let thirdVC = segue.destination as! WeatherViewController
-            thirdVC.humidity = String(humidity)
-            print(humidity)
+            thirdVC.humidity = String(GlobalVar.humidity)
+//            print("hahapu", GlobalVar.humidity)
             thirdVC.place = place
             thirdVC.temp = String(temp)
         }
     }
+    
+
     
     
     
