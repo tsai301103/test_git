@@ -15,16 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var aguilife_num: UILabel!
     @IBOutlet weak var GodImage: UIImageView!
 
-    
     var godSignVC = ""
     var godName = "jesus"
     var times = 0
-    
-    var place = ""
-    var humidity = 0.0
-    var temp = 0.0
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +27,6 @@ class ViewController: UIViewController {
     @IBAction func press(_ sender: Any) {
         print(number.currentTitle!)
     }
-
     @IBAction func sliding(_ sender: UISlider) {
         let imageNumber = sender.value.rounded()
         aguilife_num.text=String(imageNumber)
@@ -69,42 +61,37 @@ class ViewController: UIViewController {
         while times>2 {
             times = 0
             self.performSegue(withIdentifier: "goSecondView", sender: self)
-            
         }
-        
     }
-    
-   // "this is jason test 0704"
     
     @IBAction func weatherRequest(_ sender: UIButton) {
         let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=73ec0f689377a5484daa315c8988db03")!
-
-        let task = URLSession.shared.dataTask(with: url) {(data_here, response, error) in
-//            guard let data = data else { return }
-                    //先建立解碼器
-                    let decoder = JSONDecoder()
-                    decoder.dateDecodingStrategy = .iso8601
-                    //
-                    if let safeData = data_here {
-                        do {
-                            let decodedData = try decoder.decode(WeatherDecoded.self, from: safeData)
-//                            GlobalVar.humidity = String(decodedData.main.humidity)
-                            
-//                            GlobalVar.humidity = decodedData.main.humidity
-                            GlobalVar.humidity = 13
-                            print(GlobalVar.humidity)
-//                            self.temp = decodedData.main.temp
-//                            self.place = decodedData.name
-                            
-                        } catch {
-                            print(error)
+        
+            let task = URLSession.shared.dataTask(with: url) {(data_here, response, error) in
+    //            guard let data = data else { return }
+                        //先建立解碼器
+                        let decoder = JSONDecoder()
+                        decoder.dateDecodingStrategy = .iso8601
+                        //
+                        if let safeData = data_here {
+                            do {
+                                let decodedData = try decoder.decode(WeatherDecoded.self, from: safeData)
+                                DispatchQueue.main.async {
+                                    GlobalVar.humidity = String(decodedData.main.humidity)
+                                    GlobalVar.temp = String(decodedData.main.temp)
+                                    GlobalVar.place =  String(decodedData.name)
+                        
+                                    // 這個啟動 "goThirdView" segue
+                                    self.performSegue(withIdentifier: "goThirdView", sender: self)
+                                }
+                            } catch {
+                                print(error)
+                            }
+                        } else {
+                            print("error")
                         }
-                    } else {
-                        print("error")
-                    }
-                }.resume()
-        // 這個啟動 "goThirdView" segue
-        self.performSegue(withIdentifier: "goThirdView", sender: self)
+                    }.resume()
+        
         }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -116,10 +103,9 @@ class ViewController: UIViewController {
             secondVC.godImageSelect = godName
         } else if segue.identifier == "goThirdView" {
             let thirdVC = segue.destination as! WeatherViewController
-            thirdVC.humidity = String(GlobalVar.humidity)
-//            print("hahapu", GlobalVar.humidity)
-            thirdVC.place = place
-            thirdVC.temp = String(temp)
+            thirdVC.humidity = GlobalVar.humidity
+            thirdVC.place = GlobalVar.place
+            thirdVC.temp = GlobalVar.temp
         }
     }
     

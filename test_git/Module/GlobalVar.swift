@@ -8,5 +8,7 @@
 import Foundation
 
 struct GlobalVar {
-    static var humidity = 12.0
+    static var humidity = "0.0"
+    static var temp = "0.0"
+    static var place = ""
 }
